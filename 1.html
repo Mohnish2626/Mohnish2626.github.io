@@ -1,0 +1,280 @@
+<html>
+<head><title>sportsinfo</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body {font-family: Algerian, Helvetica, sans-serif;}
+
+/* Full-width input fields */
+input[type=text], input[type=password] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+
+/* Set a style for all buttons */
+button {
+  background-color: #4CAF50;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+}
+
+button:hover {
+  opacity: 0.8;
+}
+
+/* Extra styles for the cancel button */
+.cancelbtn {
+  width: auto;
+  padding: 10px 18px;
+  background-color: #f44336;
+}
+
+/* Center the image and position the close button */
+.imgcontainer {
+  text-align: center;
+  margin: 24px 0 12px 0;
+  position: relative;
+}
+
+img.avatar {
+  width: 40%;
+  border-radius: 50%;
+}
+
+.container {
+  padding: 16px;
+}
+
+span.psw {
+  float: right;
+  padding-top: 16px;
+}
+
+/* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  padding-top: 60px;
+}
+
+/* Modal Content/Box */
+.modal-content {
+  background-color: #fefefe;
+  margin: 5% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
+  border: 1px solid #888;
+  width: 80%; /* Could be more or less, depending on screen size */
+}
+
+/* The Close Button (x) */
+.close {
+  position: absolute;
+  right: 25px;
+  top: 0;
+  color: #000;
+  font-size: 35px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: red;
+  cursor: pointer;
+}
+
+/* Add Zoom Animation */
+.animate {
+  -webkit-animation: animatezoom 0.6s;
+  animation: animatezoom 0.6s
+}
+
+@-webkit-keyframes animatezoom {
+  from {-webkit-transform: scale(0)} 
+  to {-webkit-transform: scale(1)}
+}
+  
+@keyframes animatezoom {
+  from {transform: scale(0)} 
+  to {transform: scale(1)}
+}
+
+/* Change styles for span and cancel button on extra small screens */
+@media screen and (max-width: 300px) {
+  span.psw {
+     display: block;
+     float: none;
+  }
+  .cancelbtn {
+     width: 100%;
+  }
+}
+</style>
+
+</head>
+<center>
+<body bgcolor=lightblue>
+<h2>Modal Login Form</h2>
+
+<button onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Login</button>
+
+<div id="id01" class="modal">
+  
+  <form class="modal-content animate" action="/action_page.php" method="post">
+    <div class="imgcontainer">
+      <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
+      <img src="img_avatar2.png" alt="Avatar" class="avatar">
+    </div>
+
+    <div class="container">
+      <label for="uname"><b>Username</b></label>
+      <input type="text" placeholder="Enter Username" name="uname" required>
+
+      <label for="psw"><b>Password</b></label>
+      <input type="password" placeholder="Enter Password" name="psw" required>
+        
+      <button type="submit">Login</button>
+      <label>
+        <input type="checkbox" checked="checked" name="remember"> Remember me
+      </label>
+    </div>
+
+    <div class="container" style="background-color:#f1f1f1">
+      <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
+      <span class="psw">Forgot <a href="#">password?</a></span>
+    </div>
+  </form>
+</div>
+
+<script>
+// Get the modal
+var modal = document.getElementById('id01');
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+}
+@{
+newPassword = Request["newPassword"];
+confirmPassword = Request["confirmPassword"];
+token = Request["token"];
+if IsPost
+{
+    // input testing is ommitted here to save space
+    retunValue = ResetPassword(token, newPassword);
+}
+}
+<h1>Change Password</h1>
+
+<form method="post" action="">
+
+<label for="newPassword">New Password:</label>
+<input type="password" id="newPassword" name="newPassword" title="New password" />
+
+<label for="confirmPassword">Confirm Password:</label>
+<input type="password" id="confirmPassword" name="confirmPassword" title="Confirm new password" />
+
+<label for="token">Pasword Token:</label>
+<input type="text" id="token" name="token" title="Password Token" />
+
+<p class="form-actions">
+<input type="submit" value="Change Password" title="Change password" />
+</p>
+
+</form>
+
+</script>
+
+
+<h3><b>This is my first Sports Section  website </b></h3>
+<marquee><b>sports plays important role</b></marquee><side>
+<h3>
+
+Sports Section 
+ 
+</h3>
+<h3>
+Badminton 
+</h3>
+<h3>
+<img src="badminton.png" alt="Italian Trulli">
+</h3>
+<h3>
+Badminton, court or lawn game played with lightweight rackets and a shuttlecock. Historically, the shuttlecock (also known as a “bird” or “birdie”) was a small cork hemisphere with 16 goose 
+feathers attached and weighing about 0.17 ounce (5 grams). These types of shuttles may still be used in modern play, but shuttles made from synthetic materials are also allowed by the Badminton 
+World Federation. The game is named for Badminton, the country estate of the dukes of Beaufort in Gloucestershire, England, where it was first played about 1873. The roots of the sport can be 
+traced to ancient Greece, China, and India, and it is closely related to the old children’s game battledore and shuttlecock. Badminton is derived directly from poona, which was played by British 
+army officers stationed in India in the 1860s. The first unofficial all-England badminton championships for men were held in 1899, and the first badminton tournament for women was arranged the 
+next year.
+</h3>
+<h3>
+Badminton is a popular sport in India
+Indian shuttlers Saina Nehwal, Srikanth Kidambi, and Pusarla Venkata Sindhu are ranked amongst top-10 in current BWF rankings. 
+Prakash Padukone was the first player from India to achieve world no. 1 spot in the game and after him Srikanth Kidambi made it to the top spot as male player for the second time in April 2018 
+<h3>
+[2] and Saina Nehwal is the first female player from India to achieve World no. 1 spot in April 2015.<h3>
+
+<h3>[3] The most successful doubles player from India is Jwala Gutta, who is the only Indian to <h3>
+
+have been ranked in the top-10 of two categories. She peaked at no. 6 with Valiyaveetil Diju in mixed doubles and at no. 10 with Ashwini Ponnappa in women's doubles.
+<h3>[4] Other successful players include Aparna Popat, Pullela Gopichand, Syed Modi, Chetan Anand, Parupalli Kashyap, Prannoy Kumar, Ashwini Ponnappa, Chirag Shetty, Satwiksairaj Rankireddy and 
+N. Sikki Reddy.<h3>
+
+<h3>
+<img src="sania.jpg" alt="Italian Trulli">
+</h3>
+<h3><b><a href="hockey2.html"> Hockey </a></b></h3>
+<h3><img src="hockey.jpg" alt="Italian Trulli"></h3>
+
+Field hockey, also called hockey, outdoor game played by two opposing teams of 11 players each who use sticks curved at the striking end to hit a small, hard ball into their opponent’s goal. 
+It is called field hockey to distinguish it from the similar game played on ice.
+
+Hockey is believed to date from the earliest civilizations. The Arabs, Greeks, Persians, and Romans each had their own versions, and traces of a stick game played by the Aztec Indians of 
+South America have been found. Hockey can also be identified with other early games, such as hurling and shinty. During the Middle Ages a French stick game called hoquet was played, and the 
+English word may be derived from it.
+
+Hockey began to be played in English schools in the late 19th century, and the first men’s hockey club, at Blackheath in southeastern London, recorded a minute book in 1861. Teddington, 
+another London club, introduced several major variations, including the ban of using hands or lifting sticks above the shoulder, the replacement of the rubber cube by a sphere as the ball, 
+and most importantly, the adopting of a striking circle, which was incorporated into the rules of the newly founded Hockey Association in London in 1886
+
+
+<h3><b>Basketball:</b></h3>
+<h3>
+<img src="basketball.jpg" alt="Italian Trulli">
+</h3>
+Basketball, game played between two teams of five players each on a rectangular court, usually indoors. Each team tries to score by tossing the ball through the opponent’s goal, an elevated horizontal hoop and net called a basket.
+
+The only major sport strictly of U.S. origin, basketball was invented by James Naismith (1861–1939) on or about December 1, 1891, at the International Young Men’s Christian Association (YMCA) 
+Training School (now Springfield College), Springfield, Massachusetts, where Naismith was an instructor in physical education
+
+
+<h3>
+Made BY
+	Swastik,
+	Tanush,
+	Tanya,
+	Vanshika,
+	Tijil
+</h3>
+
+<h3>HOME | SERVICES | ABOUT US | CONTACT US | PRIVACY POLICY</h3>
+
+</marquee><hr>
+</body>
+</center>
+</html>
